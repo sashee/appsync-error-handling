@@ -1,0 +1,24 @@
+type Query {
+	# without explicitly throwing an error
+	unit_no_error_checking: String
+	# throw in the request template
+	unit_req_error: String
+
+	unit_append: String
+
+	# throw in a step
+	pipeline_throw: String
+
+	# append in a step
+	pipeline_append: String
+
+	# append multiple errors
+	pipeline_append_multiple: String
+
+	# change -> change -> cleanup + throw
+	pipeline_cleanup_handling(failing: Boolean!): String
+}
+
+schema {
+	query: Query
+}
